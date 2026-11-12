@@ -1,0 +1,2 @@
+system,n,rouge1,rouge2,rougeL,bleu,pred_len_words,samples_per_sec,gpu
+lead_first_last,500,28.22,7.11,23.96,11.65,15.89,6112.15,

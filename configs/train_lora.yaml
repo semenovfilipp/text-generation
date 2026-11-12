@@ -1,0 +1,32 @@
+seed: 42
+backend: unsloth
+model_name: Qwen/Qwen2.5-0.5B-Instruct
+train_path: data/processed/train.jsonl
+val_path: data/processed/val.jsonl
+output_dir: outputs/models/qwen2.5-0.5b-lora
+merged_dir: outputs/models/qwen2.5-0.5b-lora-merged
+max_seq_length: 1024
+load_in_4bit: false
+
+lora:
+  r: 16
+  alpha: 16
+  dropout: 0.0
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+
+training:
+  num_train_epochs: 2
+  per_device_train_batch_size: 8
+  gradient_accumulation_steps: 2
+  learning_rate: 2.0e-4
+  lr_scheduler_type: cosine
+  warmup_steps: 10
+  weight_decay: 0.01
+  logging_steps: 5
+  eval_steps: 25
+  optim: adamw_8bit
+
+wandb:
+  enabled: true
+  project: dialogsum-lora
+  run_name: qwen2.5-0.5b-lora-r16
