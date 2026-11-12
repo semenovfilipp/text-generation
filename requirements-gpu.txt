@@ -1,0 +1,7 @@
+-r requirements.txt
+unsloth
+vllm
+trl>=0.20
+peft>=0.15
+accelerate>=1.0
+wandb>=0.18

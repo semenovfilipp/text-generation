@@ -1,0 +1,4 @@
+system,faithfulness,coverage,conciseness,fluency,overall,win_rate,n
+qwen2.5-0.5b_zeroshot,2.95,3.05,3.69,4.67,2.95,0.57,150
+qwen2.5-0.5b_lora,3.2,2.42,4.32,4.83,2.89,0.57,150
+lead_first_last,3.19,1.48,4.68,4.77,2.23,0.22,150

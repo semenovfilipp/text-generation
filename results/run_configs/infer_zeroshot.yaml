@@ -1,0 +1,13 @@
+name: qwen2.5-0.5b_zeroshot
+seed: 42
+backend: vllm
+model_path: Qwen/Qwen2.5-0.5B-Instruct
+test_path: data/processed/test.jsonl
+output_path: outputs/predictions/qwen2.5-0.5b_zeroshot.jsonl
+dtype: half
+max_model_len: 2048
+gpu_memory_utilization: 0.85
+temperature: 0.0
+max_new_tokens: 128
+hf_batch_size: 4
+debug_size: 4

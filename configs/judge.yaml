@@ -1,0 +1,14 @@
+seed: 42
+base_url: https://api.groq.com/openai/v1
+model: openai/gpt-oss-120b
+reasoning_effort: low
+requests_per_minute: 8
+max_retries: 3
+n_samples: 150
+debug_size: 3
+test_path: data/processed/test.jsonl
+output_dir: results/judge
+systems:
+  lead_first_last: outputs/predictions/lead_first_last.jsonl
+  qwen2.5-0.5b_zeroshot: outputs/predictions/qwen2.5-0.5b_zeroshot.jsonl
+  qwen2.5-0.5b_lora: outputs/predictions/qwen2.5-0.5b_lora.jsonl
