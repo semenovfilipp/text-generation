@@ -141,11 +141,11 @@ Open the [GPU notebook in Colab](https://colab.research.google.com/github/semeno
 No merge is needed: the notebook checks out `feature/lora-summarization`.
 
 1. Select a T4 GPU and connect Google Drive.
-2. Add `GROQ_API_KEY` to Colab Secrets and grant notebook access. The local `.env` is not uploaded. Add `WANDB_API_KEY` for W&B logging.
+2. Optionally add `WANDB_API_KEY` to Colab Secrets for W&B logging. Groq is evaluated locally after the GPU run; no `GROQ_API_KEY` or local `.env` is needed in Colab.
 3. Execute cells sequentially. Stop at an error and resolve it before continuing.
 4. Short debug inference and training runs precede the full runs. Debug predictions are excluded from the final metric table.
-5. Results, judge cache, weights and installed package versions persist in `MyDrive/text-generation/outputs`. `colab_results.zip` contains results without weights.
-6. Review the examples in `manual_review.json`, copy final metrics and the loss plot into the repository, and replace README `TBD` entries with measured conclusions.
+5. Predictions, metrics, weights and installed package versions persist in `MyDrive/text-generation/outputs`. The last cell saves and downloads `colab_results.zip` without weights; put it in the local project folder for Codex to run Groq judging and finish the analysis.
+6. Codex will use the returned predictions for local Groq judging, review examples in `manual_review.json`, copy final metrics and the loss plot into the repository, and replace README `TBD` entries with measured conclusions.
 
 Estimated Colab T4 times: setup 5-15 minutes, debug runs 2-5 minutes, main GPU stages 10-30 minutes, judge 8-20 minutes. Actual times depend on the environment and API quotas.
 GPU dependency compatibility must be verified in Colab; local training and vLLM were not run. Compare speed on the same hardware with the same generation settings.
