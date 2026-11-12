@@ -1,0 +1,12 @@
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+*.egg-info/
+.env
+kaggle.json
+data/
+outputs/
+wandb/
+unsloth_compiled_cache/
+results/**/*_debug*
