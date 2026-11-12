@@ -1,0 +1,29 @@
+{
+  "test_dialogues": 500,
+  "references_per_dialogue": 3,
+  "files_sha256": {
+    "test.jsonl": "c0147b0f5b3e14be89ab178e4a9969bcd92535954b30727d336de3476b6027b3",
+    "metrics.csv": "358c1d9e4693d299569b72e5d69ff6d4851f6d1cf03f6b43a2a21ba910c480ac",
+    "environment.txt": "c3c2dc4d145be10ae04af2bea6e603309edf34e3b9c9573487abc05e77929f54",
+    "run_manifest.json": "6248d2f02a92718254dc1e2a8fb306c157f5f9995d244b8847efb2ddc85217f3",
+    "manual_review.json": "ba5d15e0382c7c11761d42380dd2fd6786689792797c03610c5c1e77cdc6245b",
+    "run_configs/data.yaml": "68872a7aa3aaa5e71ebe4bfe21c67ca841b2d11caf6153f414bf310837678b08",
+    "run_configs/infer_lora.yaml": "63a898787a0d25e4dc766832053d58f967deadcf2c8711c0ad008bcff2ce6d28",
+    "run_configs/infer_zeroshot.yaml": "9d4a53be87cce43690060fbc1189906d97160f0f000b0704e491fe6ea55fe5fd",
+    "run_configs/judge.yaml": "c7b3f529069bac85448462ecf989e5963a04db44b310cc3cb2759217c854089a",
+    "run_configs/train_lora.yaml": "9740ad54830eee18346dfa90b96fd2a4a742be9833378e97fdae9faa76e092fe",
+    "models/qwen2.5-0.5b-lora/log_history.json": "bcccf51c263b6e7f4cb25b68d2493cf05fa032dba6fa3f8becc7c61cb36aba43",
+    "models/qwen2.5-0.5b-lora/loss.png": "e9d1e3de9691826a8f79bffe6e550140e326470468a3d8a4b50bcbb4c4692714",
+    "models/qwen2.5-0.5b-lora/train_summary.json": "6342144f113890deafdb882ee0a14058560810b32b7c7e9857ad7d09ea383537",
+    "predictions/lead_first_last.jsonl": "52fd1a521c45c56f1f8d470a9af4f1dbf33f3e07476435b56cf083aebdb323c8",
+    "predictions/lead_first_last_meta.json": "52004d558b7d2a6d320411df4dad3478161c294b352502cad8326a94c3b4f7c4",
+    "predictions/qwen2.5-0.5b_zeroshot.jsonl": "18c3d455e9e9d01154977cae94b397dcf224f22eccb7f1eb3d0607d2f82addb7",
+    "predictions/qwen2.5-0.5b_zeroshot_meta.json": "80eeaccfbb9641d9536e59d3030ac0c7ceddce1e5f246eccb3c5253d188bfd0f",
+    "predictions/qwen2.5-0.5b_lora.jsonl": "6214f733ec85701dd1a477b56e538ae739eba5a00e60cc598ecdd5d9aeea6eeb",
+    "predictions/qwen2.5-0.5b_lora_meta.json": "dc16161048675e0c7e9686cd13133b82941c9c3acdbd8def82536fff869d104b"
+  },
+  "source_run": {
+    "git_commit": "a28ec2d171d9ba07a2d9cc320237c8bb11818f3f",
+    "branch": "feature/lora-summarization"
+  }
+}

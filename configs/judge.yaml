@@ -2,8 +2,8 @@ seed: 42
 base_url: https://api.groq.com/openai/v1
 model: openai/gpt-oss-120b
 reasoning_effort: low
-requests_per_minute: 20
-max_retries: 6
+requests_per_minute: 8
+max_retries: 3
 n_samples: 150
 debug_size: 3
 test_path: data/processed/test.jsonl

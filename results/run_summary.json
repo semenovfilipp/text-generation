@@ -1,0 +1,52 @@
+{
+  "training": {
+    "first_logged_loss": 1.614090347290039,
+    "last_logged_loss": 0.9467055320739746,
+    "first_eval_loss": 1.1970385313034058,
+    "last_eval_loss": 1.0970226526260376,
+    "best_eval_loss": 1.0970226526260376,
+    "final_step": 250
+  },
+  "judge_model": "openai/gpt-oss-120b",
+  "judge_seed": 42,
+  "judge_n": 150,
+  "judge_total_tokens": 139903,
+  "pairwise_overall": [
+    {
+      "a": "lead_first_last",
+      "b": "qwen2.5-0.5b_zeroshot",
+      "a_wins": 27,
+      "ties": 37,
+      "b_wins": 86,
+      "mean_overall_a_minus_b": -0.72,
+      "paired_bootstrap_95_ci": [
+        -0.92,
+        -0.52
+      ]
+    },
+    {
+      "a": "lead_first_last",
+      "b": "qwen2.5-0.5b_lora",
+      "a_wins": 29,
+      "ties": 32,
+      "b_wins": 89,
+      "mean_overall_a_minus_b": -0.66,
+      "paired_bootstrap_95_ci": [
+        -0.86,
+        -0.46
+      ]
+    },
+    {
+      "a": "qwen2.5-0.5b_zeroshot",
+      "b": "qwen2.5-0.5b_lora",
+      "a_wins": 57,
+      "ties": 37,
+      "b_wins": 56,
+      "mean_overall_a_minus_b": 0.06,
+      "paired_bootstrap_95_ci": [
+        -0.18,
+        0.3
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "backend": "unsloth",
+  "train_examples": 2000,
+  "train_runtime_sec": 292.802460697,
+  "train_loss": 1.0940283718109132,
+  "final_eval_loss": 1.0970226526260376,
+  "gpu": "Tesla T4",
+  "report_to": "none"
+}

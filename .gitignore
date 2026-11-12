@@ -10,3 +10,5 @@ outputs/
 wandb/
 unsloth_compiled_cache/
 results/**/*_debug*
+results/training/log_history.json
+results/judge/judge_raw*.jsonl

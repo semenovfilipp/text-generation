@@ -1,2 +1,4 @@
 system,n,rouge1,rouge2,rougeL,bleu,pred_len_words,samples_per_sec,gpu
-lead_first_last,500,28.22,7.11,23.96,11.65,15.89,6112.15,
+lead_first_last,500,28.22,7.11,23.96,11.65,15.89,8197.15,
+qwen2.5-0.5b_lora,500,51.48,25.54,42.77,29.89,22.81,41.91,Tesla T4
+qwen2.5-0.5b_zeroshot,500,36.25,14.51,28.26,12.66,47.38,34.9,Tesla T4

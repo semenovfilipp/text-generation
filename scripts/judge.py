@@ -116,8 +116,10 @@ def main(config, debug):
             start = time.perf_counter()
             scores, used = call_judge(client, cfg, prompt)
             tokens += used
+            if not scores:
+                raise click.ClickException("Judge retries exhausted; progress is saved. Resolve the API error before resuming.")
             if scores:
-                record = {"fingerprint": fingerprint, "id": dialogue_id, "scores": {labels[k]: v for k, v in scores.items() if k in labels}}
+                record = {"fingerprint": fingerprint, "id": dialogue_id, "total_tokens": used, "scores": {labels[k]: v for k, v in scores.items() if k in labels}}
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
                 f.flush()
             click.echo(f"[{i + 1}/{len(sample)}] {dialogue_id} tokens={used}")
@@ -130,6 +132,8 @@ def main(config, debug):
     df = pd.DataFrame(rows)
     for c in CRITERIA:
         df[c] = pd.to_numeric(df[c], errors="coerce")
+    detail_path = Path(cfg["output_dir"]) / ("judge_per_example_debug.csv" if debug else "judge_per_example.csv")
+    df.to_csv(detail_path, index=False)
     summary = df.groupby("system")[CRITERIA].mean().round(2)
     best = df.loc[df.groupby("id")["overall"].transform("max") == df["overall"]]
     summary["win_rate"] = (best.groupby("system")["id"].nunique().reindex(summary.index, fill_value=0) / df["id"].nunique()).round(2)
