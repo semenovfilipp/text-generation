@@ -17,8 +17,12 @@ def main(config, predictions_dir, output):
     test = {r["id"]: r for r in read_jsonl(f"{cfg['processed_dir']}/test.jsonl")}
     rows = []
     for path in sorted(Path(predictions_dir).glob("*.jsonl")):
+        if "_debug" in path.stem:
+            continue
         preds = read_jsonl(path)
-        preds = [p for p in preds if p["id"] in test]
+        ids = [p["id"] for p in preds]
+        if len(ids) != len(set(ids)) or set(ids) != set(test):
+            raise click.ClickException(f"{path}: expected every test ID exactly once")
         metrics = compute_metrics([p["prediction"] for p in preds], [test[p["id"]]["references"] for p in preds])
         meta_path = path.with_name(path.stem + "_meta.json")
         meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
@@ -31,6 +35,8 @@ def main(config, predictions_dir, output):
                 "gpu": meta.get("gpu", ""),
             }
         )
+    if not rows:
+        raise click.ClickException("No complete prediction files found")
     table = pd.DataFrame(rows)
     ensure_dir(Path(output).parent)
     table.to_csv(output, index=False)
